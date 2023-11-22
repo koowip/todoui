@@ -1,5 +1,6 @@
 import './App.css'
 import Card from './Card.tsx'
+import InputRow from './InputRow.tsx';
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
   return (
     <>
       <div className="backplate">
+        <InputRow />
         <div className="mainplate">
           <Card 
             title={title}

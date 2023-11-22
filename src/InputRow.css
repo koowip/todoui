@@ -1,0 +1,13 @@
+.textFormContainer {
+  display: flex;
+  align-items: center;
+}
+
+.textInputContainer {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.submitButtonContainer {
+  margin-left: 10px;
+}
