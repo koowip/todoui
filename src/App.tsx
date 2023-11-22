@@ -1,9 +1,15 @@
+import './App.css'
+import Card from './Card.tsx'
+
 function App() {
 
   return (
     <>
-      <div>Hello there!</div>
-      <div>Be Square!</div>
+      <div className="backplate">
+        <div className="mainplate">
+          <Card />
+        </div>
+      </div>
     </>
   )
 }

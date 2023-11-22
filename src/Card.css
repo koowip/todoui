@@ -1,0 +1,28 @@
+.card{
+  width: 250px;
+  height: 300px;
+  border-radius: 8px;
+  box-shadow: 0, 4px, 8px, rgba(0,0,0,.1);
+  padding: 16px;
+  margin: 10px;
+  background-color: #89B9AD;
+}
+
+.card:hover{
+  background-color: #C7DCA7;
+}
+
+.title{
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.description{
+  font-size: 18px;
+}
+
+.date{
+  font-size: 14px;
+  margin-top: 8px;
+}
