@@ -1,13 +1,21 @@
 import './Card.css'
 
-function Card() {
-
+interface CardProps {
+  title: String,
+  description: String,
+  date: String
+}
+const Card: React.FC<CardProps> = ({
+  title,
+  description,
+  date
+}) => {
   return (
     <>
       <div className='card'>
-        <div className='title'>Title</div>
-        <div className='description'>Stuff</div>
-        <div className='date'>Date</div>
+        <div className='title'>{title}</div>
+        <div className='description'>{description}</div>
+        <div className='date'>{date}</div>
       </div>
     </>
   )

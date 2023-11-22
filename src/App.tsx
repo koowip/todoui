@@ -3,11 +3,19 @@ import Card from './Card.tsx'
 
 function App() {
 
+  var title="exmp title";
+  var description="exmp desc";
+  var date="exmp date";
+
   return (
     <>
       <div className="backplate">
         <div className="mainplate">
-          <Card />
+          <Card 
+            title={title}
+            description={description}
+            date={date}
+          />
         </div>
       </div>
     </>
