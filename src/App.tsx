@@ -5,22 +5,29 @@ import InputRow from './InputRow.tsx';
 import axios from 'axios';
 
 function App() {
-  const [todoList, settodoList] = useState([]);
+  const [toDoList, setToDoList] = useState([]);
+  const [newToDo, setNewToDo] = useState(null);
 
   useEffect(() => {
+    console.log(newToDo);
+    if (newToDo) {
+      const newList = [...toDoList, newToDo];
+      setToDoList(newList)
+      setNewToDo(null)
+    } else {
     axios.get('http://localhost:5154/allToDo')
       .then(response => {
-        settodoList(response.data);
-      })
-
-  }, [])
+        setToDoList(response.data);
+    })
+    } 
+   }, [newToDo])
 
   return (
     <>
       <div className="backplate">
-        <InputRow />
-        <div className="mainplate">
-          {todoList.map((item, index) => (
+        <InputRow setNewToDo={setNewToDo}/>
+        <div className="mainplate" key={toDoList.length}>
+          {toDoList.map((item, index) => (
             <Card
             key={index}
             title={item.id}

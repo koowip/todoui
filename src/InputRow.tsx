@@ -3,7 +3,7 @@ import { useState } from 'react'
 import axios from 'axios'
 
 
-const InputRow = () => {
+const InputRow = ({setNewToDo}) => {
 
   const[inputTxt, setInputTxt] = useState('');
 
@@ -21,6 +21,7 @@ const InputRow = () => {
         "iscomplete" : false
       }
     });
+    setNewToDo(response.data)
   }
 
   return (
