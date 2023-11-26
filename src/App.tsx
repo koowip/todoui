@@ -9,7 +9,6 @@ function App() {
   const [newToDo, setNewToDo] = useState(null);
 
   useEffect(() => {
-    console.log(newToDo);
     if (newToDo) {
       const newList = [...toDoList, newToDo];
       setToDoList(newList)
@@ -22,6 +21,25 @@ function App() {
     } 
    }, [newToDo])
 
+   const deleteToDo = async (id: string) => {
+    await axios.delete(`http://localhost:5154/del/${id}`);
+    setToDoList(prev => prev.filter(x => x.id !== id))
+   }
+
+   const updateToDo = async (id: string, content: string) => {
+    const reponse = await axios({
+      method: 'put',
+      url: 'http://localhost:5154/edit',
+      headers: {},
+      data: {
+        "id" : id,
+        "content": content,
+        "iscomplete" : false
+      }
+    })
+
+   }
+
   return (
     <>
       <div className="backplate">
@@ -33,6 +51,8 @@ function App() {
             title={item.id}
             description={item.content}
             isComplete={item.isComplete}
+            deleteToDo={deleteToDo}
+            updateToDo={updateToDo}
           />
           ))}      
         </div>
